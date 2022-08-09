@@ -1,0 +1,96 @@
+.profile {
+    max-width: 1322px;
+    margin: 24px auto 0 auto;
+    &__box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 0 12px 0;
+    }
+
+    &__hello {
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 35px;
+        color: #404064;
+    }
+
+    &__btn {
+        background: #FFCE0C;
+        border-radius: 4px;
+        border: 0;
+        width: 116px;
+        height: 36px;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 16px;
+        transition: .3s;
+        
+        &:focus {
+            background: #FFCE0C;
+            border: 1px solid #FFFBEA;
+            box-shadow: 0px 1px 10px #FFD73B;
+        }
+        &:hover {
+            background: #FFD73B;
+            box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.12);
+        }
+        &[disabled] {
+            opacity: 0.5;
+        }
+        &:active {
+            background: #FFC40C;
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.12);
+        }
+        &:default {
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+    }
+
+    &__form {
+        width: 100%;
+        min-height: 288px;
+        background: #FFFFFF;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+        border-radius: 2px;
+    }
+
+    &__list {
+        max-width: 696px;
+        padding: 24px 0 24px 24px;
+    }
+
+    &__item {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 0 12px 0;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: #999999;
+    }
+
+    &__input {
+        width: 435px;
+        height: 38px;
+        box-sizing: border-box;
+        padding: 12px 6px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        background-color: #ffffff;
+        border-radius: 4px;
+        border: 1px solid #D6DCE9;
+        color: #6879BB;
+
+        &::placeholder {
+            color: #CCCCCC;
+        }
+    }
+}

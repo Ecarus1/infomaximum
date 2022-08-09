@@ -1,0 +1,40 @@
+$sidebar-bg-color: #404064;
+$sidebar-width: 224px;
+$sidebar-collapsed-width: 0px;
+
+@import "../../style/variables.scss";
+@import '~react-pro-sidebar/dist/scss/styles.scss';
+
+.pro-sidebar {
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1000;
+    color: #d8d8d8;
+    
+
+    &-header {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        background-color: $bg-sidebar-header;
+        border-bottom: 0px !important;
+        box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.pro-menu-item {
+    list-style-type: none;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 18px 0 18px 0;
+    white-space: nowrap;
+}
+.pro-inner-item {
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 28px;
+}
+.pro-item-content {
+    margin: 0 0 0 16px;
+}

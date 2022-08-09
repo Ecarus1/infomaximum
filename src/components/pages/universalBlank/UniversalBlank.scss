@@ -1,0 +1,27 @@
+@import "../../../style/variables.scss";
+
+.universal-blank {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(229.68deg, #6879BB 7.06%, #9300BB 95.23%);
+
+
+    &__container {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 424px;
+    }
+
+    &__logo {
+        margin: 32px 0;
+        // max-width: 158px;
+    }
+
+    &__box {
+        width: 100%;
+        height: 656px;
+        background-color: $primary-color;
+    }
+}

@@ -1,0 +1,61 @@
+@import "../../../style/variables.scss";
+
+.header {
+    font-family: 'Open Sans', sans-serif;
+    min-height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    filter: drop-shadow(0px 4px 12px rgba(104, 121, 187, 0.15));
+
+    &--shadow {
+        background: #20262B;
+        opacity: 0.5;
+    }
+
+    &__box {
+        display: flex;
+        margin: 0 0 0 28px;
+        cursor: pointer;
+    }
+
+    &__title {
+        font-size: 14px;
+        margin: 0 0 0 16px;
+        color: $secendory-color;
+        font-weight: 700;
+        
+        &::first-letter {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    background-color: $bg-homepage;
+    flex-grow: 1;
+
+    &--shadow {
+        background: rgba(34, 95, 145, 0.281);
+        transition: 0.3s;
+    }
+}
+
+// body {
+//     background-color: $bg-homepage;
+// }
+
+.block-shadow {
+    position: absolute;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: #20262B;
+    opacity: 0.5;
+}

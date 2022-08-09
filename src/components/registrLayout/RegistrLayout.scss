@@ -1,0 +1,130 @@
+@import "../../style/variables.scss";
+
+.form {
+    font-family: 'Open Sans', sans-serif;
+
+    &__list {
+        margin: 0 auto;
+        list-style-type: none;
+        max-width: 328px;
+    }
+
+    &__item {
+        max-height: 36px;
+
+        &:first-child {
+            margin: 36px 0 20px 0;
+        }
+
+        // &:nth-child(7) {
+        //     margin: 24px 0 0 0;
+        // }
+
+        // &:nth-child(8) {
+        //     margin: 18px 0 0 0;
+        // }
+
+        // &:not(:first-child) {
+        //     margin: 0 0 12px 0;
+        // }
+        &:nth-last-child(1) {
+            margin: 18px 0 0 0;
+        }
+        &:nth-last-child(2) {
+            margin: 24px 0 0 0;
+        }
+    }
+
+    &__indent {
+        margin: 12px 0 0 0;
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: 700;
+        color: $t-text;
+
+        &::first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        height: 38px;
+        box-sizing: border-box;
+        padding: 12px 6px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        background-color: $primary-color;
+        border-radius: 4px;
+        border: 1px solid #D6DCE9;
+        color: $l-text;
+
+        &::placeholder {
+            color: $pl-text;
+        }
+    }
+
+    &__submit {
+        width: 100%;
+        height: 38px;
+        font-weight: 700;
+        font-size: 12px;
+        background-color: $fin-btn-bg;
+        border-radius: 4px;
+        border: 0;
+        color: $fin_btn-text;
+
+        &:focus {
+            background: #FFCE0C;
+            border: 1px solid #FFFBEA;
+            box-shadow: 0px 1px 10px #FFD73B;
+        }
+        &:hover {
+            background: #FFD73B;
+            box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.12);
+        }
+        &[disabled] {
+            opacity: 0.5;
+        }
+        &:active {
+            background: #FFC40C;
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.12);
+        }
+        &:default {
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $l-text
+    }
+
+    &__err {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        min-height: 98px;
+        background: #FFE9DB;
+        margin: 24px 0 0 0;
+    }
+
+    &__err-icon {
+        margin: 0 25px 0 48px;
+    }
+
+    &__box-pas {
+        position: relative;
+    }
+
+    &__eye {
+        position: absolute;
+        right: 0;
+        top: 7px;
+        border: 0;
+        background-color: transparent;
+    }
+}

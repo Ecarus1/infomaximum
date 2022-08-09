@@ -1,0 +1,148 @@
+@import "../../style/variables.scss";
+
+.list-process {
+    font-family: 'Open Sans', sans-serif;
+
+    &__item {
+        margin: 0 0 12px 0;
+    }
+
+    &__box {
+        max-width: 1322px;
+        background-color: $primary-color;
+        min-height: 252px;
+        margin: 0 auto;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+        border-radius: 2px;
+    }
+}
+
+.process-header {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 24px 0 0;
+    border-bottom: 1px solid $border-b-process;
+
+    &__title {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 30px;
+        margin: 0 0 0 24px;
+
+        color: $secendory-color;
+    }
+
+    &__box {
+        display: flex;
+        align-items: center;
+        opacity: 0.5;
+    }
+
+    &__nav {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 16px;
+        color: $secendory-color;
+        margin: 0 15px 0 0;
+    }
+}
+
+.process-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    min-height: 192px;
+    max-width: 1015px;
+}
+
+
+.repeats {
+    max-width: 289px;
+    margin: 0 0 0 24px;
+    display: flex;
+    flex-direction: column;
+
+    &__ident {
+        margin: 64px 0 0 0;
+    }
+
+    &__box {
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__number {
+        margin: 0 0 0 12px;
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 35px;
+    }
+
+    &__title {
+        margin: 0 0 0 36px;
+        line-height: 16px;
+        font-weight: 400;
+        font-size: 12px;
+        color: #999999;
+    }
+}
+
+.average-time {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 0 0 24px;
+
+    &__time {
+        margin: 0 0 24px 0;
+    }
+
+    &__number {
+        margin: 0 0 0 12px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 25px;
+    }
+}
+
+.stats {
+    display: flex;
+    margin: 0 0 0 24px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+
+    &__titles:last-child {
+        margin: 38px 0 0 20px;
+    }
+
+    &__titles {
+        margin-top: 38px;
+    }
+
+    &__title:not(:last-child) {
+        margin: 0 0 12px 0;
+    }
+
+}
+
+.list-process  h5 {
+    height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.size {
+    height: 192px;
+}
