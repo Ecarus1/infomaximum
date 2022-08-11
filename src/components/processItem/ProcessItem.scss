@@ -46,6 +46,7 @@
         line-height: 16px;
         color: $secendory-color;
         margin: 0 15px 0 0;
+        text-decoration: none;
     }
 }
 
@@ -87,6 +88,7 @@
         font-weight: 700;
         font-size: 26px;
         line-height: 35px;
+        color: #535374;
     }
 
     &__title {
@@ -113,6 +115,7 @@
         font-weight: 700;
         font-size: 18px;
         line-height: 25px;
+        color: #535374;
     }
 }
 
@@ -129,10 +132,16 @@
 
     &__titles {
         margin-top: 38px;
+        color: #999999;
+        
     }
 
     &__title:not(:last-child) {
         margin: 0 0 12px 0;
+    }
+
+    &__date {
+        color: #333333;
     }
 
 }

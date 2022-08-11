@@ -11,6 +11,8 @@ import {ReactComponent as Err} from "../../assets/icon-err.svg";
 import {ReactComponent as Open} from "../../assets/eye-open.svg";
 import {ReactComponent as Close} from "../../assets/eye-close.svg";
 
+import { checkCapitalLetter, checkPassword } from "../../utils";
+
 import "./RegistrLayout.scss"
 
 const RegistrLayout = () => {
@@ -59,19 +61,33 @@ const RegistrLayout = () => {
                 validate={values => {
                     const errors = {};
                     if (!values.name) {
-                        errors.name = 'Обязательное поле';
+                        errors.name = 'Произошла ошибка. Поле должно быть заполнено!';
+                    } else if (!checkCapitalLetter(values.name)) {
+                        errors.name = 'Первая буква должна быть заглавной!'
+                    } else if (values.name?.length < 3) {
+                        errors.name = 'Поле должно содержать как минимум 3 символа';
                     }
+
                     if (!values.surname) {
-                        errors.surname = 'Обязательное поле';
+                        errors.surname = 'Произошла ошибка. Поле должно быть заполнено!';
+                    } else if (!checkCapitalLetter(values.surname)) {
+                        errors.surname = 'Первая буква должна быть заглавной!'
+                    } else if (values.surname?.length < 3) {
+                        errors.surname = 'Поле должно содержать как минимум 3 символа';
                     }
+
                     if (!values.email) {
-                        errors.email = 'Обязательное поле';
+                        errors.email = 'Произошла ошибка. Поле должно быть заполнено!';
                     }
+
                     if (!values.password) {
-                        errors.password = 'Обязательное поле';
-                    } 
+                        errors.password = 'Произошла ошибка. Поле должно быть заполнено!';
+                    } else if (!checkPassword.test(values.password)) {
+                        errors.password = 'Пароль слишком простой. 6 символов: английские буквы верхнего и нижнего регистра, цифры и знаки.';
+                    }
+
                     if (!values.repeatedPassword) {
-                        errors.repeatedPassword = "Обязательное поле";
+                        errors.repeatedPassword = "Произошла ошибка. Поле должно быть заполнено!";
                     } else if (values.password !== values.repeatedPassword) {
                         errors.repeatedPassword = "Пароли не совпадают";
                     }
@@ -87,12 +103,18 @@ const RegistrLayout = () => {
                             <li className="form__item form__indent">
                                 <Field name="name">
                                     {({ input, meta }) => (
-                                        <input 
-                                            {...input} 
-                                            className="form__input"
-                                            style={meta.error && meta.touched ? {border: "1px solid red"} : {border: "1px solid #D6DCE9"}}
-                                            type="text"
-                                            placeholder="Имя"/>
+                                        <>
+                                            <input 
+                                                {...input} 
+                                                className="form__input"
+                                                style={meta.error && meta.touched ? {border: "1px solid red"} : {border: "1px solid #D6DCE9"}}
+                                                type="text"
+                                                placeholder="Имя"
+                                                disabled={submitting}
+                                                />
+
+                                            {meta.error && meta.touched && <span className="form__err-mini">{meta.error}</span>}
+                                        </>
                                     )}
                                 </Field>
                             </li>
@@ -100,12 +122,18 @@ const RegistrLayout = () => {
                             <li className="form__item form__indent">
                                 <Field name="surname">
                                     {({ input, meta }) => (
-                                        <input 
-                                            {...input} 
-                                            className="form__input"
-                                            style={meta.error && meta.touched ? {border: "1px solid red"} : {border: "1px solid #D6DCE9"}}
-                                            type="text" 
-                                            placeholder="Фамилия"/>
+                                        <>
+                                            <input 
+                                                {...input} 
+                                                className="form__input"
+                                                style={meta.error && meta.touched ? {border: "1px solid red"} : {border: "1px solid #D6DCE9"}}
+                                                type="text" 
+                                                placeholder="Фамилия"
+                                                disabled={submitting}
+                                                />
+
+                                            {meta.error && meta.touched && <span className="form__err-mini">{meta.error}</span>}
+                                        </>
                                     )}
                                 </Field>
                             </li>
@@ -113,12 +141,17 @@ const RegistrLayout = () => {
                             <li className="form__item form__indent">
                                 <Field name="email">
                                     {({ input, meta }) => (
-                                        <input 
-                                            {...input} 
-                                            className="form__input"
-                                            style={meta.error && meta.touched ? {border: "1px solid red"} : {border: "1px solid #D6DCE9"}}
-                                            type="email"
-                                            placeholder="Электронная почта"/>
+                                        <>
+                                            <input 
+                                                {...input} 
+                                                className="form__input"
+                                                style={meta.error && meta.touched ? {border: "1px solid red"} : {border: "1px solid #D6DCE9"}}
+                                                type="email"
+                                                placeholder="Электронная почта"
+                                                disabled={submitting}
+                                                />
+                                            {meta.error && meta.touched && <span className="form__err-mini">{meta.error}</span>}
+                                        </>
                                     )}
                                 </Field>
                             </li>
@@ -132,8 +165,12 @@ const RegistrLayout = () => {
                                                 className="form__input"
                                                 style={meta.error && meta.touched ? {border: "1px solid red"} : {border: "1px solid #D6DCE9"}}
                                                 type={passwordShown ? "text" : "password"}
-                                                placeholder="Введите пароль"/>
+                                                placeholder="Введите пароль"
+                                                disabled={submitting}
+                                                />
                                             <button className="form__eye" onClick={togglePassword}>{passwordShown ? <Open/> : <Close/>}</button>
+
+                                            {meta.error && meta.touched && <span className="form__err-mini">{meta.error}</span>}
                                         </div>
                                     )}
                                 </Field>
@@ -148,8 +185,12 @@ const RegistrLayout = () => {
                                                 className="form__input"
                                                 style={meta.error && meta.touched ? {border: "1px solid red"} : {border: "1px solid #D6DCE9"}}
                                                 type={passwordShown ? "text" : "password"}
-                                                placeholder="Повторите пароль"/>
+                                                placeholder="Повторите пароль"
+                                                disabled={submitting}
+                                                />
                                             <button className="form__eye" onClick={togglePassword}>{passwordShown ? <Open/> : <Close/>}</button>
+
+                                            {meta.error && meta.touched && <span className="form__err-mini">{meta.error}</span>}
                                         </div>
                                     )}
                                 </Field>

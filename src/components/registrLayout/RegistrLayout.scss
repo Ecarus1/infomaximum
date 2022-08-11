@@ -10,7 +10,7 @@
     }
 
     &__item {
-        max-height: 36px;
+        min-height: 36px;
 
         &:first-child {
             margin: 36px 0 20px 0;
@@ -65,6 +65,10 @@
         &::placeholder {
             color: $pl-text;
         }
+
+        &:disabled {
+            background-color: #F5F5F5;
+        }
     }
 
     &__submit {
@@ -110,6 +114,13 @@
         min-height: 98px;
         background: #FFE9DB;
         margin: 24px 0 0 0;
+    }
+
+    &__err-mini {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: #EE4141;
     }
 
     &__err-icon {

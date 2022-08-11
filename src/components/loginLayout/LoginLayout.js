@@ -70,12 +70,17 @@ const LoginLayout = () => {
                             <li className="form__item form__indent">
                                 <Field name="email">
                                     {({ input, meta }) => (
-                                        <input 
-                                            {...input} 
-                                            className="form__input"
-                                            style={meta.error && meta.touched ? {border: "1px solid red"} : {border: "1px solid #D6DCE9"}}
-                                            type="email"
-                                            placeholder="Электронная почта"/>
+                                        <>
+                                            <input 
+                                                {...input} 
+                                                className="form__input"
+                                                style={meta.error && meta.touched ? {border: "1px solid red"} : {border: "1px solid #D6DCE9"}}
+                                                type="email"
+                                                placeholder="Электронная почта"
+                                                disabled={submitting}
+                                                />
+                                            {meta.error && meta.touched && <span className="form__err-mini">{meta.error}</span>}
+                                        </>
                                     )}
                                 </Field>
                             </li>
@@ -89,9 +94,12 @@ const LoginLayout = () => {
                                                 className="form__input"
                                                 style={meta.error && meta.touched ? {border: "1px solid red"} : {border: "1px solid #D6DCE9"}}
                                                 type={passwordShown ? "text" : "password"}
-                                                placeholder="Введите пароль"/>
+                                                placeholder="Введите пароль"
+                                                disabled={submitting}
+                                                />
                                             
                                             <button className="form__eye" onClick={togglePassword}>{passwordShown ? <Open/> : <Close/>}</button>
+                                            {meta.error && meta.touched && <span className="form__err-mini">{meta.error}</span>}
                                         </div>
                                     )}
                                 </Field>

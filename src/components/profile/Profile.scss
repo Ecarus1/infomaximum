@@ -1,6 +1,6 @@
 .profile {
     max-width: 1322px;
-    margin: 24px auto 0 auto;
+    margin: 84px auto 0 auto;
     &__box {
         display: flex;
         align-items: center;
@@ -76,8 +76,14 @@
         color: #999999;
     }
 
-    &__input {
+    &__err-box {
+        display: flex;
+        flex-direction: column;
         width: 435px;
+    }
+
+    &__input {
+        max-width: 435px;
         height: 38px;
         box-sizing: border-box;
         padding: 12px 6px;

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import moment from "moment";
 import plural from "plural-ru";
 
@@ -33,7 +34,8 @@ function ProcessItem({name, numberOfExecutions, averageLeadTime, averageActiveTi
                 <header className="process-header">
                     <h3 className="process-header__title">{name}</h3>
                     <div className="process-header__box">
-                        <h5 className="process-header__nav">На карту процесса</h5>
+                        {/* <h5 className="process-header__nav">На карту процесса</h5> */}
+                        <Link className="process-header__nav" to="/dawdawdawdawdawfefs" style={{pointerEvents: 'none'}}>На карту процесса</Link>
                         <Arrow />
                     </div>
                 </header>

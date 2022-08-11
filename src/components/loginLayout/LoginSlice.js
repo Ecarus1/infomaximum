@@ -172,8 +172,10 @@ const loginSlice = createSlice({
         },
         [editProfile.pending]: (state) => {
             state.isFetching = true;
+            state.isSuccess = false;
         },
         [editProfile.rejected]: (state) => {
+            state.isSuccess = false;
             state.isFetching = false;
             state.isError = true;
             state.errorMessage = "Произошла ошибка"
